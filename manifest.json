@@ -1,0 +1,23 @@
+{
+    "manifest_version":2,
+    "name":"Plugin",
+    "description":"moj prvi plugin",
+    "version":"1.0.0",
+    "content_security_policy": "script-src 'self' 'sha256-WOdSzz11/3cpqOdrm89LBL2UPwEU9EhbDtMy2OciEhs='",
+
+    "icons":{},
+    "browser_action":{
+        "default_icon":"icon.png",
+        "default_popup":"popup.html"
+    },
+   
+ 
+    "permissions":["tabs",
+        "webRequest",
+        "storage",
+        "<all_urls>"],
+
+        "background": {
+            "scripts": ["popup.js"]
+          }
+}

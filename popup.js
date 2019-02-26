@@ -8,8 +8,10 @@ $(document).ready(function(){
 }, function(tabs) {
     var link=document.createElement('a');
      link.href= tabs[0].url;
-  
-    $("#obiskana").html("Trenutno: "+link.host);
+
+    $("#current").val(link.host);
+
+   
 
      //dodan listener za spremembo tab-a v statistiko
         var elStats = document.getElementById('toStatistics');

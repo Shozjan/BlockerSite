@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 
 function redirectUser(){
-    window.location.href='statistika.html';
+    window.location.href='registrationUser.html';
   }
   
   function redirectAdmin(){

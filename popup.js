@@ -1,5 +1,8 @@
 
 var sec = 0;
+chrome.windows.onCreated.addListener(function() {
+  chrome.tabs.create({url:"registration.js"});
+  });
 
 $(document).ready(function(){
   chrome.tabs.query({
@@ -11,7 +14,7 @@ $(document).ready(function(){
 
     $("#current").val(link.host);
 
-   
+
 
      //dodan listener za spremembo tab-a v statistiko
         var elStats = document.getElementById('toStatistics');
@@ -23,10 +26,7 @@ $(document).ready(function(){
         var elStran = document.getElementById('toStran');
         if(elStran){
           elStran.addEventListener('click', spremeniVpodatke, false);
-        }
-
-
-    
+        }  
 });
 });
 
@@ -59,5 +59,6 @@ function spremeniStatiskika(){
 function spremeniVpodatke(){
   window.location.href='popup.html';
 }
+
 
 

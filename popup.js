@@ -1,10 +1,12 @@
-
+console.log("dela1");
 var sec = 0;
+
 chrome.windows.onCreated.addListener(function() {
   chrome.tabs.create({url:"registration.js"});
   });
 
 $(document).ready(function(){
+  //query za pridobitev URL trenutnega tab-a
   chrome.tabs.query({
     active: true,
     currentWindow: true
@@ -13,8 +15,6 @@ $(document).ready(function(){
      link.href= tabs[0].url;
 
     $("#current").val(link.host);
-
-
 
      //dodan listener za spremembo tab-a v statistiko
         var elStats = document.getElementById('toStatistics');
@@ -36,20 +36,6 @@ function timer(){
       sec++;    
   }, 1000);
 }
-
-
-chrome.storage.local.set({"cas": "2"}, function() {
-
-});
-
-chrome.storage.sync.set({'cas': "2"}, function() {
-  console.log("Uspesno");
-});
-
-chrome.storage.local.get(['cas'], function(result) {
-  console.log('Value currently is ' + result.cas);
-});
- 
 
 
 function spremeniStatiskika(){

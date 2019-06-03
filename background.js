@@ -1,5 +1,5 @@
-var webSites = ["www.w3schools.com", "www.24ur.com", "www.rtvslo.si"];
-
+var webSites=[];
+preberiBazo();
 setInterval(function() {
     chrome.tabs.query({
         active: true,
@@ -20,3 +20,23 @@ setInterval(function() {
   }, 1);
 
  
+function dodajArray(){
+    webSites.push("www.facebook.com");
+    arrayToString();
+}
+
+function arrayToString(){
+    var blockSites=webSites.join(" ");
+    prenosVBazo(blockSites);
+}
+
+function prenosVBazo(blockSites) {
+    //TODO prenos v bazo glede na uporabnika
+    alert(blockSites);
+}
+
+function preberiBazo(){
+    //TODO povezava z bazo glede na uporabnika
+    var string ="www.facebook.com www.24ur.com";
+    webSites = string.split(' ');
+}

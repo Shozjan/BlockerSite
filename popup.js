@@ -1,4 +1,4 @@
-console.log("dela1");
+
 var sec = 0;
 
 chrome.windows.onCreated.addListener(function() {
@@ -26,9 +26,17 @@ $(document).ready(function(){
         var elStran = document.getElementById('toStran');
         if(elStran){
           elStran.addEventListener('click', spremeniVpodatke, false);
-        }  
+        }
+
+        var gumb = document.getElementById('blockBut');
+        if(gumb){
+          gumb.addEventListener('click', dodajArray, false);
+        }
+
 });
 });
+
+
 
 function timer(){
   var timer = setInterval(function(){
@@ -36,7 +44,6 @@ function timer(){
       sec++;    
   }, 1000);
 }
-
 
 function spremeniStatiskika(){
   window.location.href='statistika.html';
